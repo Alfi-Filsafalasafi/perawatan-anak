@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Penilaian - Perawatan Anak</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="penilaian">
+<nav id="nav"></nav>
+<main>
+<section id="penilaian" class="on">
+ <div id="step1">
+  <div class="title"><h2>Penilaian Kebutuhan Anak</h2><p>Isi data anak terlebih dahulu untuk memulai penilaian.</p></div>
+  <div class="box"><h3 style="color:var(--pri)">Data Anak</h3>
+   <label>Nama Anak</label><input type="text" id="nama" placeholder="Masukkan nama anak">
+   <label>Usia Anak</label><select id="usia"><option value="">Pilih usia anak</option><option>Bayi (0-12 bulan)</option><option>Batita (1-3 tahun)</option><option>Prasekolah (3-5 tahun)</option><option>Anak Sekolah (6-12 tahun)</option></select>
+   <label>Jenis Kelamin</label><label style="display:inline;font-weight:600"><input type="radio" name="jk" checked> Laki-laki</label> &nbsp; <label style="display:inline;font-weight:600"><input type="radio" name="jk"> Perempuan</label>
+   <label>Berat Badan (kg)</label><input type="number" id="bb" placeholder="Contoh: 10" min="1">
+   <label>Tinggi Badan (cm)</label><input type="number" id="tb" placeholder="Contoh: 80" min="30">
+   <div class="err" id="err1"></div>
+   <button class="btn" style="width:100%" onclick="startQ()">Lanjut ke Pertanyaan →</button></div>
+ </div>
+ <div id="step2" hidden>
+  <div class="title"><h2>Pertanyaan Penilaian</h2><p>Jawab pertanyaan berikut sesuai kondisi anak.</p></div>
+  <div class="qwrap"><div class="cats" id="qcats"></div>
+   <div class="box" style="max-width:none"><div style="display:flex;align-items:center;gap:12px"><h3 id="qcat" style="color:var(--pri)"></h3><div class="bar"><i id="qbar"></i></div><b id="qn"></b></div>
+    <p id="qtext" style="font-weight:700;margin:14px 0 4px"></p><div id="qopts"></div><div class="err" id="err2"></div>
+    <div class="row"><button class="btn alt" onclick="prevQ()">← Kembali</button><button class="btn" id="nextb" onclick="nextQ()">Lanjut →</button></div></div></div>
+ </div>
+ <div id="step3" hidden>
+  <div class="title"><h2>Hasil Penilaian</h2><p id="rsub"></p></div>
+  <div class="ok-banner" id="rban"></div>
+  <div class="res" id="rres"></div>
+  <div class="reco"><h3>💡 Rekomendasi</h3><ul id="rrec"></ul></div>
+  <div style="text-align:center"><button class="btn alt" onclick="resetQ()">Ulangi Penilaian</button></div>
+ </div>
+</section>
+</main>
+<footer id="footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/penilaian.js"></script>
+</body>
+</html>
