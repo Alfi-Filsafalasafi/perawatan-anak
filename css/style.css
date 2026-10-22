@@ -121,3 +121,27 @@ body[data-page="home"] .grid{padding:0 clamp(16px,4vw,60px);margin-top:28px}
 @media(min-width:768px){
   .danger{grid-template-columns:repeat(3,1fr)}
 }
+
+/* ===== PROFIL TIM (Home) ===== */
+.team{position:relative;margin:48px clamp(16px,4vw,60px) 0;padding:44px clamp(14px,3vw,36px) 28px;
+  background:rgba(255,245,248,.88);border:2px dashed var(--pri2);border-radius:36px}
+.team-title{position:absolute;top:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:linear-gradient(90deg,var(--pri),var(--pri2));color:#fff;font-size:clamp(1.1rem,2.4vw,1.6rem);
+  padding:6px 34px;border-radius:99px;box-shadow:0 4px 12px #ff5a8a44}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.member{display:grid;grid-template-columns:48% 52%;align-items:center;border-radius:20px;padding:0;
+  border:1px solid var(--line);overflow:hidden}
+.member.m1{background:#ffe9f1}
+.member.m2{background:#e4f0ff}
+.member img{width:100%;height:auto;max-width:none;align-self:end;display:block}
+.info-m{text-align:center;align-self:center;padding:10px 14px 10px 6px;color:#2c4fa8}
+.info-m b{display:block;font-family:'Baloo 2',Nunito,sans-serif;font-size:1rem;line-height:1.2}
+.info-m span{display:block;font-size:.88rem;font-weight:700;margin-top:4px}
+@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .team{background:rgba(42,40,64,.9)}
+  :root:not([data-theme="light"]) .member.m1,:root:not([data-theme="light"]) .member.m2{background:var(--soft)}
+}
+:root[data-theme="dark"] .team{background:rgba(42,40,64,.9)}
+:root[data-theme="dark"] .member.m1,:root[data-theme="dark"] .member.m2{background:var(--soft)}
